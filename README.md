@@ -43,20 +43,16 @@ The BIOS had been upgraded to v1.44.0 and following settings has been changed in
 - VT for Direct I/O - Enable VT for Direct I/O
 - Trusted Execution - Checked
 
-## Important Note
+## Important Notes
 
 Please pay attention to the following issues before and after you perform installation process.
 
 <details>
-<summary><strong>Right Disk Drive</strong></summary>
+<summary><strong>Disk Drive</strong></summary>
 <br/>
-Hackintosh works well with Samsung and Western Digital based SSD drives and that is entirely my personal opinion based on my experiences. Try to stay away from less popular branded drives. This computer supports both the SATA and NVMe based drives, so pick a drive wisely.
+Hackintosh works well with Samsung and Western Digital based SSD drives and that is entirely my personal opinion based on my experiences. Try to stay away from less popular branded drives. This computer supports M.2 based both the SATA and NVMe drives, so pick a drive wisely.
 </details>
 <details>
-<summary><strong>Audio Issue</strong></summary>
-<br/>
-Correct audio <code>layout-id</code> is crucially important for your build here, so spent sometime to figure it out. Check the AppleALC <a href="https://github.com/acidanthera/AppleALC/wiki/Supported-codecs" target="_blank">supported codec</a> page which covers wide range of audio devices. Bare in mind that <a href="https://github.com/acidanthera/AppleALC" target="_blank">AppleALC</a> does not work on macOS 26 aka Tahoe. So, read the page carefully. I opted for <code>VoodooHDA</code> and included the kext file withing the <code>EFI</code>. If that does not help, try with VoodooHDA <a href="https://olarila.com/topic/42836-easy-audio-solution-on-hackintosh-on-macos-tahoe/" target="_blank">compiler</a> which should work.
-</details>
 <details>
 <summary><strong>USB Mapping</strong></summary>
 <br/>
@@ -65,5 +61,20 @@ The EFI already includes USB mapped kext file of my device. This may or may not 
 <details>
 <summary><strong>Generate SMBIOS</strong></summary>
 <br/>
-Please generate your own SMBIOS with <a href="https://github.com/ic005k/OCAuxiliaryTools" target="_blank">OC Auxiliary Tools</a> or any other tool that you are familiar with.
+Please generate your own SMBIOS with <a href="https://github.com/ic005k/OCAuxiliaryTools" target="_blank">OCAT</a> or any other tool that you are familiar with.
+</details>
+<summary><strong>Use ProperTree</strong></summary>
+<br/>
+If you are making any modifications to the provied EFI, please use <a href="https://github.com/corpnewt/ProperTree" target="_blank">ProperTree</a> and take a clean snapshot using this tool to avoid unnecessary issues.
+</details>
+
+
+
+
+<summary><strong>Audio Issue</strong></summary>
+<br/>
+Correct audio <code>layout-id</code> is crucially important for your build here, so spent sometime to figure it out. Check the AppleALC <a href="https://github.com/acidanthera/AppleALC/wiki/Supported-codecs" target="_blank">supported codec</a> page which covers wide range of audio devices. Bare in mind that <a href="https://github.com/acidanthera/AppleALC" target="_blank">AppleALC</a> does not work on macOS 26 aka Tahoe. So, read the page carefully. I opted for <code>VoodooHDA</code> and included the kext file withing the <code>EFI</code>. If that does not help, try with VoodooHDA <a href="https://olarila.com/topic/42836-easy-audio-solution-on-hackintosh-on-macos-tahoe/" target="_blank">compiler</a> which should work.
+</details>
+<summary><strong>WiFi & Bluetooth</strong></summary>
+<br/>
 </details>
