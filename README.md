@@ -54,5 +54,5 @@ Hackintosh works well with Samsung and Western Digital based SSD drives and that
 
 <details>
 <summary><strong>Audio Issue</strong></summary>
-Correct audio `layout-id` is crucially important for your build here, so spent sometime to figure it out. Check the AppleALC [supported codec](https://github.com/acidanthera/AppleALC/wiki/Supported-codecs) page which covers wide range of audio devices.
+Correct audio `layout-id` is crucially important for your build here, so spent sometime to figure it out. Check the AppleALC <a href="https://github.com/acidanthera/AppleALC/wiki/Supported-codecs" target="_blank">supported codec</a> page which covers wide range of audio devices.
 </details>
