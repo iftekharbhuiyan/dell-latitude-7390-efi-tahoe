@@ -9,6 +9,8 @@ Dell Latitude 7390 OpenCore EFI build for macOS Tahoe.
 
 ## Specification ##
 
+| Device       | Details                             |
+| ------------ | ----------------------------------- |
 | CPU          | Intel Core i5-8350U                 |
 | GPU          | Intel UHD Graphics 620              |
 | Memory       | SK hynix 16GB DDR4 2400 MHz         |
