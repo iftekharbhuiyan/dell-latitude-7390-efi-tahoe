@@ -98,3 +98,10 @@ Please note that both methods mentioned above can not be used at the same time. 
 ## Credits
 
 - [lzhoang2801](https://github.com/lzhoang2801) - OpenCore Simplify
+- [Acidanthera](https://github.com/acidanthera) - OpenCorePkg
+- [dortania](https://github.com/dortania/OpenCore-Legacy-Patcher) - OpenCore Legacy Patcher
+- [OpenIntelWireless](https://github.com/OpenIntelWireless) - Intel Wireless Kexts
+- [ic005k](https://github.com/ic005k) - OC Auxiliary Tools
+- [corpnewt](https://github.com/corpnewt/) - ProperTree
+- [CloverHackyColor](https://github.com/CloverHackyColor) - VoodooHDA Kext
+- [badges](https://github.com/badges) - Shields.io
