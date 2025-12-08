@@ -29,23 +29,22 @@ The BIOS had been upgraded to v1.44.0 and following settings has been changed in
 <summary><strong>BIOS Options</strong></summary><br/>
 <ul>
 <li>Integrated NIC - Enabled</li>
+<li>SATA Operation - AHCI</li>
+<li>Keyboard Illumination - Disabled</li>
+<li>Touchscreen - Unchecked</li>
+<li>Absolute - Disabled</li>
+<li>Secure Boot Enable - Unchecked</li>
+<li>Secure Boot Mode - Audit Mode</li>
+<li>Intel SGX Enable - Disabled</li>
+<li>Wakes on LAN/WLAN - LAN Only</li>
+<li>Block Sleep - Unchecked</li>
+<li>Fastboot - Minimal</li>
+<li>Intel AMT Capability - Enabled</li>
+<li>UEFI Boot Path Security - Always, Except Internal HDD</li>
+<li>Virtualization - Enable Intel Virtualization Technology</li>
+<li>VT for Direct I/O - Enable VT for Direct I/O</li>
+<li>Trusted Execution - Checked</li>
 </ul>
-- Integrated NIC - Enabled
-- SATA Operation - AHCI
-- Keyboard Illumination - Disabled
-- Touchscreen - Unchecked
-- Absolute - Disabled
-- Secure Boot Enable - Unchecked
-- Secure Boot Mode - Audit Mode
-- Intel SGX Enable - Disabled
-- Wakes on LAN/WLAN - LAN Only
-- Block Sleep - Unchecked
-- Fastboot - Minimal
-- Intel AMT Capability - Enabled
-- UEFI Boot Path Security - Always, Except Internal HDD
-- Virtualization - Enable Intel Virtualization Technology
-- VT for Direct I/O - Enable VT for Direct I/O
-- Trusted Execution - Checked
 </details>
 
 ## Important Notes
@@ -80,8 +79,9 @@ Correct audio <code>layout-id</code> is crucially important for your audio devic
 <details>
 <summary><strong>WiFi & Bluetooth</strong></summary><br/>
 There are no official support for Intel based WiFi & Bluetooth module in macOS. However, following options are available.
-- Use <a href="https://github.com/OpenIntelWireless/itlwm">itlwm.kext</a> with <a href="https://github.com/OpenIntelWireless/HeliPort">Heliport</a> app. Check if your module is <a href="https://openintelwireless.github.io/itlwm/Compat.html">supported</a> or not. If you choose this method make sure your ethernet device is in "active" status regardless you use the cable connection or not. This is the most simplest method.
-- Use <a href="https://github.com/OpenIntelWireless/itlwm">AirportItlwm.kext</a> along with `IO80211FamilyLegacy.kext` and `IOSkywalkFamily.kext`. Make the necessary adjustments with your plist editor and then run OpenCore Legacy Patcher (<a href="https://github.com/dortania/OpenCore-Legacy-Patcher">OCLP</a>) for root patch. Read their guidelines for better understandings and to learn how to enable bluetooth.
-
+<ul>
+<li>Use <a href="https://github.com/OpenIntelWireless/itlwm">itlwm.kext</a> with <a href="https://github.com/OpenIntelWireless/HeliPort">Heliport</a> app. Check if your module is <a href="https://openintelwireless.github.io/itlwm/Compat.html">supported</a> or not. If you choose this method make sure your ethernet device is in "active" status regardless you use the cable connection or not. This is the most simplest method.</li>
+<li>Use <a href="https://github.com/OpenIntelWireless/itlwm">AirportItlwm.kext</a> along with `IO80211FamilyLegacy.kext` and `IOSkywalkFamily.kext`. Make the necessary adjustments with your plist editor and then run OpenCore Legacy Patcher (<a href="https://github.com/dortania/OpenCore-Legacy-Patcher">OCLP</a>) for root patch. Read their guidelines for better understandings and to learn how to enable bluetooth.</li>
+</ul>
 Please note that both methods mentioned above can not be used at the same time. For Broadcom based WiFi modules, use <a href="https://github.com/0xFireWolf/AppleBCMWLANCompanion">AppleBCMWLANCompanion</a> and read their documentation.
 </details>
