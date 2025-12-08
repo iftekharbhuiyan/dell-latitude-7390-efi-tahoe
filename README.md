@@ -87,7 +87,7 @@ Correct audio <code>layout-id</code> is crucially important for your audio devic
 <details>
 <summary><strong>WiFi & Bluetooth</strong></summary><br/>
 There are no official support for Intel based WiFi & Bluetooth module in macOS. However, following options are available if you want them to be working in macOS Tahoe.
-<br/>
+
 <ul>
 <li>Use <a href="https://github.com/OpenIntelWireless/itlwm">itlwm.kext</a> with <a href="https://github.com/OpenIntelWireless/HeliPort">Heliport</a> app. Check if your module is <a href="https://openintelwireless.github.io/itlwm/Compat.html">supported</a> or not. If you choose this method make sure your ethernet device is in "active" status regardless you use the cable connection or not. This is the most simplest method.</li>
 <li>Use <a href="https://github.com/OpenIntelWireless/itlwm">AirportItlwm.kext</a> along with `IO80211FamilyLegacy.kext` and `IOSkywalkFamily.kext`. Make the necessary adjustments with your plist editor and then run OpenCore Legacy Patcher (<a href="https://github.com/dortania/OpenCore-Legacy-Patcher">OCLP</a>) for root patch. Read their guidelines for better understandings and to learn how to enable bluetooth.</li>
