@@ -48,30 +48,33 @@ Please pay attention to the following issues before and after you perform instal
 
 <details>
 <summary><strong>Disk Drive</strong></summary><br/>
-Hackintosh works well with Samsung and Western Digital based SSD drives and that is entirely my personal opinion based on my experiences. Try to stay away from less popular branded drives. This computer supports M.2 based both the SATA and NVMe drives, so pick a drive wisely.
+Hackintosh works well with Samsung and Western Digital based SSD drives and that is entirely my personal opinion based on my experiences. Try to stay away from less popular branded drives. This computer supports M.2 based SATA and NVMe drives, so pick a drive wisely. Update the firmware of your drive prior installing the macOS if possible.
 </details>
 
 <details>
 <summary><strong>USB Mapping</strong></summary><br/>
-The EFI already includes USB mapped kext file of my device. This may or may not work for you. So, use the <a href="https://github.com/USBToolBox/tool">USB Tool Box</a> and generate your own USB mapped kext file in case if mine does not work.
+The EFI already includes USB mapped kext file of my laptop. This may or may not work for you. So, use the <a href="https://github.com/USBToolBox/tool">USB Tool Box</a> and generate your own USB mapped kext file in case if mine does not work. Even if you can complete the installation process successfully, please check if you can use other ports or not.
 </details>
 
 <details>
 <summary><strong>Generate SMBIOS</strong></summary><br/>
-Please generate your own SMBIOS with <a href="https://github.com/ic005k/OCAuxiliaryTools">OCAT</a> or any other tool that you are familiar with.
+Please do not use my SMBIOS included within this EFI. Feel free to generate your own SMBIOS with <a href="https://github.com/ic005k/OCAuxiliaryTools">OCAT</a> or any other tool that you are familiar with.
 </details>
 
 <details>
 <summary><strong>Use ProperTree</strong></summary><br/>
-If you are making any modifications to the provied EFI, please use <a href="https://github.com/corpnewt/ProperTree">ProperTree</a> and take a clean snapshot using this tool to avoid unnecessary issues.
+If you are making any modifications to the provied EFI, use <a href="https://github.com/corpnewt/ProperTree">ProperTree</a> and take a clean snapshot using this tool to avoid unwanted issues.
 </details>
 
 <details>
 <summary><strong>Audio Issue</strong></summary><br/>
-Correct audio <code>layout-id</code> is crucially important for your build here, so spent sometime to figure it out. Check the AppleALC <a href="https://github.com/acidanthera/AppleALC/wiki/Supported-codecs">supported codec</a> page which covers wide range of audio devices. Bare in mind that <a href="https://github.com/acidanthera/AppleALC">AppleALC</a> does not work on macOS 26 aka Tahoe. So, read the page carefully. I opted for <code>VoodooHDA</code> and included the kext file withing the <code>EFI</code>. If that does not help, try with VoodooHDA <a href="https://olarila.com/topic/42836-easy-audio-solution-on-hackintosh-on-macos-tahoe/">compiler</a> which should work.
+Correct audio <code>layout-id</code> is crucially important for your audio device to work properly, so spent sometime to figure it out. Check the AppleALC <a href="https://github.com/acidanthera/AppleALC/wiki/Supported-codecs">supported codec</a> page which covers wide range of audio devices. Bare in mind that <a href="https://github.com/acidanthera/AppleALC">AppleALC</a> does not work on macOS 26 aka Tahoe. So, read the page carefully. I opted for <code>VoodooHDA</code> and included the kext file withing the <code>EFI</code>. If that does not work, try with VoodooHDA <a href="https://olarila.com/topic/42836-easy-audio-solution-on-hackintosh-on-macos-tahoe/">compiler</a> which should work.
 </details>
 
 <details>
 <summary><strong>WiFi & Bluetooth</strong></summary><br/>
-
+There are no official support for Intel based WiFi & Bluetooth module in macOS. However, following options are available.
+- Use <a href="https://github.com/OpenIntelWireless/itlwm">itlwm.kext</a> with <a href="https://github.com/OpenIntelWireless/HeliPort">Heliport</a> app. Check if your module is <a href="https://openintelwireless.github.io/itlwm/Compat.html">supported</a> or not. If you choose this method make sure your ethernet device is in "active" status regardless you use the cable connection or not. This is the most simplest method.
+- Use <a href="https://github.com/OpenIntelWireless/itlwm">AirportItlwm.kext</a> along with `IO80211FamilyLegacy.kext` and `IOSkywalkFamily.kext`. Make the necessary adjustments with your plist editor and then run OpenCore Legacy Patcher (<a href="https://github.com/dortania/OpenCore-Legacy-Patcher">OCLP</a>) for root patch. Read their guidelines for better understandings and to learn how to enable bluetooth.
+Please note that both methods can not be used at the same time. For Broadcom based WiFi modules, use <a href="https://github.com/0xFireWolf/AppleBCMWLANCompanion">AppleBCMWLANCompanion</a> and read their documentation.
 </details>
