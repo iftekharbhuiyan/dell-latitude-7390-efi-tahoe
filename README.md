@@ -25,6 +25,8 @@ Dell Latitude 7390 OpenCore EFI build for macOS Tahoe. This EFI was mostly gener
 
 The BIOS had been upgraded to v1.44.0 and following settings has been changed in order to make the installation process smoother.
 
+<details>
+<summary><strong>BIOS Options</strong></summary><br/>
 - Integrated NIC - Enabled
 - SATA Operation - AHCI
 - Keyboard Illumination - Disabled
@@ -41,6 +43,7 @@ The BIOS had been upgraded to v1.44.0 and following settings has been changed in
 - Virtualization - Enable Intel Virtualization Technology
 - VT for Direct I/O - Enable VT for Direct I/O
 - Trusted Execution - Checked
+</details>
 
 ## Important Notes
 
@@ -74,9 +77,9 @@ Correct audio <code>layout-id</code> is crucially important for your audio devic
 <details>
 <summary><strong>WiFi & Bluetooth</strong></summary><br/>
 There are no official support for Intel based WiFi & Bluetooth module in macOS. However, following options are available.
-
+<br/>
 - Use <a href="https://github.com/OpenIntelWireless/itlwm">itlwm.kext</a> with <a href="https://github.com/OpenIntelWireless/HeliPort">Heliport</a> app. Check if your module is <a href="https://openintelwireless.github.io/itlwm/Compat.html">supported</a> or not. If you choose this method make sure your ethernet device is in "active" status regardless you use the cable connection or not. This is the most simplest method.
 - Use <a href="https://github.com/OpenIntelWireless/itlwm">AirportItlwm.kext</a> along with `IO80211FamilyLegacy.kext` and `IOSkywalkFamily.kext`. Make the necessary adjustments with your plist editor and then run OpenCore Legacy Patcher (<a href="https://github.com/dortania/OpenCore-Legacy-Patcher">OCLP</a>) for root patch. Read their guidelines for better understandings and to learn how to enable bluetooth.
 
-Please note that both methods can not be used at the same time. For Broadcom based WiFi modules, use <a href="https://github.com/0xFireWolf/AppleBCMWLANCompanion">AppleBCMWLANCompanion</a> and read their documentation.
+Please note that both methods mentioned above can not be used at the same time. For Broadcom based WiFi modules, use <a href="https://github.com/0xFireWolf/AppleBCMWLANCompanion">AppleBCMWLANCompanion</a> and read their documentation.
 </details>
