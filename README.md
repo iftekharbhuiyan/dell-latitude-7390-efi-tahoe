@@ -27,6 +27,9 @@ The BIOS had been upgraded to v1.44.0 and following settings has been changed in
 
 <details>
 <summary><strong>BIOS Options</strong></summary><br/>
+<ul>
+<li>Integrated NIC - Enabled</li>
+</ul>
 - Integrated NIC - Enabled
 - SATA Operation - AHCI
 - Keyboard Illumination - Disabled
