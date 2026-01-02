@@ -1,4 +1,4 @@
-# Dell Latitude 7390 EFI - Tahoe
+# Dell Latitude 7390 EFI - macOS Tahoe
 
 [![Static Badge](https://img.shields.io/badge/macOS-Tahoe-orange)](https://developer.apple.com/documentation/macos-release-notes/macos-26-release-notes)
 [![Static Badge](https://img.shields.io/badge/OpenCore-1.0.6-blue)](https://github.com/acidanthera/OpenCorePkg/releases/tag/1.0.6)
@@ -9,25 +9,26 @@ Dell Latitude 7390 OpenCore EFI build for macOS Tahoe v26.1. This EFI was mostly
 ## Screenshot
 
 <p>
-<picture>
-<img src="./screenshots/desktop.png" alt="macOS Tahoe Hackintosh" />
-</picture>
+<figure>
+<img src="./screenshots/desktop.png" alt="macOS Tahoe Desktop" />
+<figcaption>Screenshot of the macOS Tahoe Desktop</figcaption>
+</figure>
 </p>
 
 ## Specification
 
-| Device       | Model                               |
-| ------------ | ----------------------------------- |
-| CPU          | Intel Core i5-8350U                 |
-| GPU          | Intel UHD Graphics 620              |
-| Memory       | SK hynix 16GB DDR4 2400 MHz         |
-| Drive        | Samsung 970 EVO Plus                |
-| Audio        | Realtek ALC3246                     |
-| WiFi & BT    | Intel Wireless-AC 8265NGW           |
-| Ethernet     | Intel Ethernet I219-LM              |
-| Card Reader  | Broadcom USH 5880                   |
-| Mic          | Builtin                             |
-| Webcam       | Builtin                             |
+| Device       | Model                               | Status   |
+| ------------ | ----------------------------------- | -------- |
+| CPU          | Intel Core i5-8350U                 | Works    |
+| GPU          | Intel UHD Graphics 620              | Works    |
+| Memory       | SK hynix 16GB DDR4 2400 MHz         | Works    |
+| Drive        | Samsung 970 EVO Plus                | Works    |
+| Audio        | Realtek ALC3246                     | Works    |
+| WiFi & BT    | Intel Wireless-AC 8265NGW           | Partial  |
+| Ethernet     | Intel Ethernet I219-LM              | Works    |
+| Card Reader  | Broadcom USH 5880                   | Untested |
+| Mic          | Builtin                             | Works    |
+| Webcam       | Builtin                             | Works    |
 
 ## BIOS Setup
 
