@@ -88,9 +88,9 @@ There are no official support for Intel based WiFi & Bluetooth module in macOS. 
 
 <ul>
 <li>Use <a href="https://github.com/OpenIntelWireless/itlwm">itlwm.kext</a> with <a href="https://github.com/OpenIntelWireless/HeliPort">Heliport</a> app. Check if your module is <a href="https://openintelwireless.github.io/itlwm/Compat.html">supported</a> or not. I already added the kext file with the EFI but you need to enable it.</li>
-<li>Use <a href="https://github.com/OpenIntelWireless/itlwm">AirportItlwm.kext</a> along with `IO80211FamilyLegacy.kext` and `IOSkywalkFamily.kext`. Make the necessary adjustments with your plist editor and then run OpenCore Legacy Patcher (<a href="https://github.com/dortania/OpenCore-Legacy-Patcher">OCLP</a>) for root patch. Read their guidelines for better understandings. Root patching may or may not be available for the latest version of the macOS Tahoe.</li>
+<li>Use <a href="https://github.com/OpenIntelWireless/itlwm">AirportItlwm.kext</a> along with <code>IO80211FamilyLegacy.kext</code> and <code>IOSkywalkFamily.kext</code>. Make the necessary adjustments with your plist editor and then run OpenCore Legacy Patcher (<a href="https://github.com/dortania/OpenCore-Legacy-Patcher">OCLP</a>) for root patch. Read their guidelines for better understandings. Root patching may or may not be available for the latest version of the macOS Tahoe.</li>
 </ul>
-Please note that both methods mentioned above can not be used at the same time. For Broadcom based WiFi modules, use <a href="https://github.com/0xFireWolf/AppleBCMWLANCompanion">AppleBCMWLANCompanion</a> and read their documentation. I already added necessary kexts for Intel based Bluetooth devices which should work right away. If you are using non Intel based Bluetooth device please disable `IntelBluetoothFirmware.kext` from the Kernel section.
+Please note that both methods mentioned above can not be used at the same time. For Broadcom based WiFi modules, use <a href="https://github.com/0xFireWolf/AppleBCMWLANCompanion">AppleBCMWLANCompanion</a> and read their documentation. I already added necessary kexts for Intel based Bluetooth devices which should work right away. If you are using non Intel based Bluetooth device please disable <code>IntelBluetoothFirmware.kext<code> from the Kernel section.
 </details>
 
 ## Credits
