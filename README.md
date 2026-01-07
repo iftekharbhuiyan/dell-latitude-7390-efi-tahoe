@@ -17,18 +17,20 @@ Dell Latitude 7390 OpenCore EFI build for macOS Tahoe v26.1. This EFI was mostly
 
 ## Specification
 
-| Device       | Model                               | Status   |
-| ------------ | ----------------------------------- | -------- |
-| CPU          | Intel Core i5-8350U                 | Works    |
-| GPU          | Intel UHD Graphics 620              | Works    |
-| Memory       | SK hynix 16GB DDR4 2400 MHz         | Works    |
-| Drive        | Samsung 970 EVO Plus                | Works    |
-| Audio        | Realtek ALC3246                     | Works    |
-| WiFi & BT    | Intel Wireless-AC 8265NGW           | Partial  |
-| Ethernet     | Intel Ethernet I219-LM              | Works    |
-| Card Reader  | Broadcom USH 5880                   | Untested |
-| Mic          | Builtin                             | Works    |
-| Webcam       | Builtin                             | Works    |
+| Device            | Model                               | Status   |
+| ----------------- | ----------------------------------- | -------- |
+| CPU               | Intel Core i5-8350U                 | Works    |
+| GPU               | Intel UHD Graphics 620              | Works    |
+| Memory            | SK hynix 16GB DDR4 2400 MHz         | Works    |
+| Drive             | Samsung 970 EVO Plus                | Works    |
+| Audio             | Realtek ALC3246                     | Works    |
+| WiFi & BT         | Intel Wireless-AC 8265NGW           | Partial  |
+| Ethernet          | Intel Ethernet I219-LM              | Works    |
+| SD Card Reader    | Realtek Memory Card Reader          | Works    |
+| Smart Card Reader | Broadcom USH 5880                   | Untested |
+| Mic               | Builtin                             | Works    |
+| Webcam            | Builtin                             | Works    |
+
 
 ## BIOS Setup
 
@@ -61,8 +63,8 @@ The BIOS had been upgraded to v1.44.0 and following settings has been changed in
 Please pay attention to the following issues before and after you perform installation process.
 
 <details>
-<summary><strong>Disk Drive</strong></summary><br/>
-Hackintosh works well with Samsung and Western Digital based SSD drives and that is entirely my personal opinion based on my experiences. Try to stay away from less popular branded drives. This computer supports M.2 based SATA and NVMe drives, so pick a drive wisely. Update the firmware of your drive prior installing the macOS if possible.
+<summary><strong>Audio Issue</strong></summary><br/>
+Correct audio <code>layout-id</code> is crucially important for your audio device to work properly, so spent sometime to figure it out. Check the AppleALC <a href="https://github.com/acidanthera/AppleALC/wiki/Supported-codecs">supported codec</a> page which covers wide range of audio devices. Bare in mind that <a href="https://github.com/acidanthera/AppleALC">AppleALC</a> does not work on macOS 26 aka Tahoe. So, read the page carefully. I used <a href="https://github.com/chris1111/VoodooHDA-Tahoe">VoodooHDA Tahoe</a> which requires disabling SIP.
 </details>
 
 <details>
@@ -81,19 +83,14 @@ If you are making any modifications to the provied EFI, use <a href="https://git
 </details>
 
 <details>
-<summary><strong>Audio Issue</strong></summary><br/>
-Correct audio <code>layout-id</code> is crucially important for your audio device to work properly, so spent sometime to figure it out. Check the AppleALC <a href="https://github.com/acidanthera/AppleALC/wiki/Supported-codecs">supported codec</a> page which covers wide range of audio devices. Bare in mind that <a href="https://github.com/acidanthera/AppleALC">AppleALC</a> does not work on macOS 26 aka Tahoe. So, read the page carefully. I opted for <code>VoodooHDA</code> and included the kext file withing the <code>EFI</code>. If that does not work, try with VoodooHDA <a href="https://olarila.com/topic/42836-easy-audio-solution-on-hackintosh-on-macos-tahoe/">compiler</a> which should work.
-</details>
-
-<details>
 <summary><strong>WiFi & Bluetooth</strong></summary><br/>
 There are no official support for Intel based WiFi & Bluetooth module in macOS. However, following options are available if you want them to be working in macOS Tahoe.
 
 <ul>
-<li>Use <a href="https://github.com/OpenIntelWireless/itlwm">itlwm.kext</a> with <a href="https://github.com/OpenIntelWireless/HeliPort">Heliport</a> app. Check if your module is <a href="https://openintelwireless.github.io/itlwm/Compat.html">supported</a> or not. If you choose this method make sure your ethernet device is in "active" status regardless you use the cable connection or not. This is the most simplest method.</li>
-<li>Use <a href="https://github.com/OpenIntelWireless/itlwm">AirportItlwm.kext</a> along with `IO80211FamilyLegacy.kext` and `IOSkywalkFamily.kext`. Make the necessary adjustments with your plist editor and then run OpenCore Legacy Patcher (<a href="https://github.com/dortania/OpenCore-Legacy-Patcher">OCLP</a>) for root patch. Read their guidelines for better understandings and to learn how to enable bluetooth.</li>
+<li>Use <a href="https://github.com/OpenIntelWireless/itlwm">itlwm.kext</a> with <a href="https://github.com/OpenIntelWireless/HeliPort">Heliport</a> app. Check if your module is <a href="https://openintelwireless.github.io/itlwm/Compat.html">supported</a> or not. I already added the kext file with the EFI but you need to enable it.</li>
+<li>Use <a href="https://github.com/OpenIntelWireless/itlwm">AirportItlwm.kext</a> along with `IO80211FamilyLegacy.kext` and `IOSkywalkFamily.kext`. Make the necessary adjustments with your plist editor and then run OpenCore Legacy Patcher (<a href="https://github.com/dortania/OpenCore-Legacy-Patcher">OCLP</a>) for root patch. Read their guidelines for better understandings. Root patching may or may not be available for the latest version of the macOS Tahoe.</li>
 </ul>
-Please note that both methods mentioned above can not be used at the same time. For Broadcom based WiFi modules, use <a href="https://github.com/0xFireWolf/AppleBCMWLANCompanion">AppleBCMWLANCompanion</a> and read their documentation.
+Please note that both methods mentioned above can not be used at the same time. For Broadcom based WiFi modules, use <a href="https://github.com/0xFireWolf/AppleBCMWLANCompanion">AppleBCMWLANCompanion</a> and read their documentation. I already added necessary kexts for Intel based Bluetooth devices which should work right away. If you are using non Intel based Bluetooth device please disable `IntelBluetoothFirmware.kext` from the Kernel section.
 </details>
 
 ## Credits
