@@ -26,7 +26,7 @@ Dell Latitude 7390 OpenCore EFI build for macOS Tahoe v26.2. This EFI was mostly
 | Audio             | Realtek ALC3246                     | Works    |
 | WiFi & BT         | Intel Wireless-AC 8265NGW           | Partial  |
 | Ethernet          | Intel Ethernet I219-LM              | Works    |
-| SD Card Reader    | Realtek Memory Card Reader          | Works    |
+| SD Card Reader    | Realtek RTS525A Card Reader         | Works    |
 | Smart Card Reader | Broadcom USH 5880                   | Untested |
 | Mic               | Builtin                             | Works    |
 | Webcam            | Builtin                             | Works    |
@@ -85,6 +85,7 @@ If you are making any modifications to the provied EFI, use <a href="https://git
 <details>
 <summary><strong>WiFi & Bluetooth</strong></summary><br/>
 There are no official support for Intel based WiFi & Bluetooth module in macOS. However, following options are available if you want them to be working in macOS Tahoe.
+</details>
 
 <ul>
 <li>Use <a href="https://github.com/OpenIntelWireless/itlwm">itlwm.kext</a> with <a href="https://github.com/OpenIntelWireless/HeliPort">Heliport</a> app. Check if your module is <a href="https://openintelwireless.github.io/itlwm/Compat.html">supported</a> or not. I already added the kext file with the EFI but you need to enable it.</li>
